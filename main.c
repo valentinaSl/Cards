@@ -341,6 +341,7 @@ void MoneyMenu(int* ptrmoney) {
 				printf("Sorry, you are in debt. You cannot spend money :(\n");
 				return;
 			}
+			printf("Please input the amount of money you spent\n");
 			int use = 0;
 			scanf(" %d", &use);
 			while (getchar() != '\n');
