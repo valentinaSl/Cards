@@ -384,8 +384,8 @@ void Play(int* ptrmoney, int* ptrbalance) {
 		int idecade = i / 10; int guess_decade = guess / 10;
 		while (getchar() != '\n');
 		if (guess == i) {
-			printf("Congratulations! You guessed the number and get 20 moneys!");
-			(*ptrmoney) += 20;
+			printf("Congratulations! You guessed the number and get 100 moneys!");
+			(*ptrmoney) += 100;
 		}
 		else if (idecade == guess_decade) {
 			printf("Congratulations! You guessed the decade and get 10 moneys! The exact number was: %d", i);
