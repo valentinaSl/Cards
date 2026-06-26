@@ -171,7 +171,7 @@ void Studying(int* pointnumI, int*ptrbalance) {
 		OutputError(); return;
 	}
 	for (int i = 0; i < ((*pointnumI) - 1); i++) {
-		fprintf(fdataptr, "%d. %s~%s%%%ld +%d\n", list[i].number, list[i].front, list[i].back, list[i].time, list[i].level);
+		fprintf(fdataptr, "%d. %s~%s%%%ld+%d\n", list[i].number, list[i].front, list[i].back, list[i].time, list[i].level);
 	}
 	fclose(fdataptr);
 	free(list);
