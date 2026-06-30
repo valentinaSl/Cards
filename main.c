@@ -109,6 +109,7 @@ void Input(int *pointnumI, int *ptrbalance){
 	printf("Type in the front side of the card, type the symbol \"~\", type the back side of the card, and then enter to save the card.\n");
 	printf("After this, the cycle starts over.\nTo go back to the menu, just enter \"#\"\n");
 	printf("\nIMPORTANT: please avoid using the symbols \"~, %%, +, #\" ( \"~, #\" - ONLY the specified locations)\n");
+	printf("á, é, í, ó, ú, ü, ñ, ¿, and ¡\n");
 	FILE* iptr; FILE* fptr;	FILE* fdataptr;
 	fptr = fopen("Vocabulary.txt", "a");
 	fdataptr = fopen("VocabularyData.txt", "a");
