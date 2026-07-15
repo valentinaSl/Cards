@@ -26,7 +26,7 @@ void TheStudy(int* ptr_subnum, int* pointnumI, struct card* list, int*ptrbalance
 void GameMenu(int* ptrbalance, int*ptrmoney);
 void MoneyMenu(int* ptrmoney);
 void Play(int* ptrmoney, int* ptrbalance);
-void Data();
+void Data(int* pointnumI);
 
 int main() {
 	srand((unsigned int)time(NULL));
