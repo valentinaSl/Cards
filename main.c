@@ -144,6 +144,8 @@ void Data(int* pointnumI){
 	printf("Level 4 words: %d\n", level4);
 	printf("Level 5 words: %d\n", level5);
 	printf("Level 6 words: %d\n", level6);
+	fclose(fdataptr);
+
 }
 
 void Input(int *pointnumI, int *ptrbalance){
