@@ -114,11 +114,11 @@ void Data(int* pointnumI){
 	if (fdataptr == NULL) {//check if the the pointer points
 		OutputError(); return;
 	}
-	int total_words, level1, level2, level3, level4, level5, level6;
+	int total_words=0, level1=0, level2=0, level3=0, level4=0, level5=0, level6=0;
 	int temporary_level, dumb;
-	long long dumb2;
+	long int dumb2;
 	for (int i=0; i<*pointnumI; i++){
-		fscanf(fdataptr, "%d %%%ld+%d", &dumb, &dumb2, &temporary_level);
+		fscanf(fdataptr, "%d %*[^%]%%%ld+%d", &dumb, &dumb2, &temporary_level);
 		if (temporary_level == 1){
 			level1++;
 		}
