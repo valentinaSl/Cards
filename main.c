@@ -26,6 +26,7 @@ void TheStudy(int* ptr_subnum, int* pointnumI, struct card* list, int*ptrbalance
 void GameMenu(int* ptrbalance, int*ptrmoney);
 void MoneyMenu(int* ptrmoney);
 void Play(int* ptrmoney, int* ptrbalance);
+void Data();
 
 int main() {
 	srand((unsigned int)time(NULL));
@@ -82,7 +83,7 @@ int main() {
 void Menu(int* pointnumI, int* ptrbalance, int* ptrmoney) {
 	char choice = '1';
 	do {
-		printf("What would you like to do? For adding new words enter A, for studying enter S, for game menu enter G, for closing enter #\n");
+		printf("What would you like to do? Adding new words A, studying S, game menu G, info F, closing #\n");
 		scanf(" %c", &choice);
 		while (getchar() != '\n');
 		if (choice == 'A') {
@@ -94,6 +95,9 @@ void Menu(int* pointnumI, int* ptrbalance, int* ptrmoney) {
 		else if (choice == 'G') {
 			GameMenu(ptrbalance, ptrmoney);
 		}
+		else if (choice == 'F') {
+			Data(pointnumI);
+		}
 		else if (choice == '#') {
 			break;
 		}
@@ -104,11 +108,46 @@ void Menu(int* pointnumI, int* ptrbalance, int* ptrmoney) {
 		while (choice != '#');
 }
 
+void Data(int* pointnumI){
+	FILE* fdataptr;
+	fdataptr = fopen("VocabularyData.txt", "r");
+	if (fdataptr == NULL) {//check if the the pointer points
+		OutputError(); return;
+	}
+	int total_words, level1, level2, level3, level4, level5, level6;
+	int temporary_level, dumb;
+	for (int i=0; i<pointnumI; i++){
+		scanf(fdataptr, "%d %%%ld+%d", &dumb, &dumb, &temporary_level);
+		if (temporary_level == 1){
+			level1++;
+		}
+		else if (temporary_level == 2){
+			level2++;
+		}
+		else if (temporary_level == 3){
+			level3++;
+		}
+		else if (temporary_level == 4){
+			level4++;
+		}
+		else if (temporary_level == 5){
+			level5++;
+		}
+		else if (temporary_level == 6){
+			level6++;
+		}
+	}
+	printf("Total words: %d\n", *pointnumI);
+	printf("Level 1 words: %d\n", level1);
+	printf("Level 2 words: %d\n", level2);
+	printf("Level 3 words: %d\n", level3);
+	printf("Level 4 words: %d\n", level4);
+	printf("Level 5 words: %d\n", level5);
+	printf("Level 6 words: %d\n", level6);
+}
+
 void Input(int *pointnumI, int *ptrbalance){
-	printf("\nYou are now in the \"Add New Words\" mode. Here are some rules of writing for the smooth work :)\n");
 	printf("Type in the front side of the card, type the symbol \"~\", type the back side of the card, and then enter to save the card.\n");
-	printf("After this, the cycle starts over.\nTo go back to the menu, just enter \"#\"\n");
-	printf("\nIMPORTANT: please avoid using the symbols \"~, %%, +, #\" ( \"~, #\" - ONLY the specified locations)\n");
 	printf("á, é, í, ó, ú, ü, ñ, ¿, and ¡\n");
 	FILE* iptr; FILE* fptr;	FILE* fdataptr;
 	fptr = fopen("Vocabulary.txt", "a");
@@ -149,7 +188,6 @@ void Input(int *pointnumI, int *ptrbalance){
 void Studying(int* pointnumI, int*ptrbalance) {
 	printf("Please choose the studying mode. For hard mode enter H, for easy mode enter E, for old cards enter O (Letter O).\n");
 	printf("If you know the given word word enter Y, if you don\'t know the word enter N.\n");
-	printf("To go back to the menu, just enter #\n");
 	char choice = '1';
 	scanf(" %c", &choice);
 	while (getchar() != '\n');
@@ -360,8 +398,7 @@ void MoneyMenu(int* ptrmoney) {
 
 void Play(int* ptrmoney, int* ptrbalance) {
 	printf("Now you can play the game with points you earned while studying! Your balance: %d \n", *ptrbalance);
-	printf("Computers pick a number from 0 to 99, you need to guess it! If you get the same decade you get 10 moneys, if you get exact number you get 20 moneys!\n");
-	printf("One game costs 100 points. If you would like to continue enter Y, to go back to menu enter #. After the game you automatically will return to the game menu\n");
+	printf("If you would like to continue enter Y\n");
 	char choice = '1';
 	scanf(" %c", &choice);
 	while (getchar() != '\n');
