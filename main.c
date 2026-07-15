@@ -116,8 +116,9 @@ void Data(int* pointnumI){
 	}
 	int total_words, level1, level2, level3, level4, level5, level6;
 	int temporary_level, dumb;
+	long long dumb2;
 	for (int i=0; i<*pointnumI; i++){
-		fscanf(fdataptr, "%d %%%ld+%d", &dumb, &dumb, &temporary_level);
+		fscanf(fdataptr, "%d %%%ld+%d", &dumb, &dumb2, &temporary_level);
 		if (temporary_level == 1){
 			level1++;
 		}
