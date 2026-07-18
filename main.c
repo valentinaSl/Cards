@@ -118,7 +118,7 @@ void Data(int* pointnumI){
 	int temporary_level, dumb;
 	long int dumb2;
 	for (int i=0; i<*pointnumI-1; i++){
-		fscanf(fdataptr, "%d %*[^%]%%%ld +%d", &dumb, &dumb2, &temporary_level);
+		fscanf(fdataptr, "%d. %*[^%]%%%ld +%d", &dumb, &dumb2, &temporary_level);
 		if (temporary_level == 1){
 			level1++;
 		}
