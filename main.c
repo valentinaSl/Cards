@@ -242,9 +242,17 @@ void TheStudy(int* ptr_subnum, int *pointnumI, struct card*list, int* ptrbalance
 			}
 		}
 		currentlvl = list[listindx].level;
-		printf("%s", list[listindx].front);
-		while (getchar() != '\n');
-		printf("%s\n", list[listindx].back);
+		int j = rand() % 2;
+		if (j == 0) {
+			printf("%s", list[listindx].front);
+			while (getchar() != '\n');
+			printf("%s\n", list[listindx].back);
+		}
+		else if (j == 1) {
+			printf("%s", list[listindx].back);
+			while (getchar() != '\n');
+			printf("%s\n", list[listindx].front);
+		}
 		scanf(" %c", &progress);
 		while (getchar() != '\n');
 		while (progress != 'N' && progress != 'Y' && progress != '#') {
